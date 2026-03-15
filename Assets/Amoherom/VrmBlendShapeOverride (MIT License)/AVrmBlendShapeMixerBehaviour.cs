@@ -60,6 +60,7 @@ namespace Amoherom
             var value_EyeSurprised = 0f;
             var value_EyeSpread = 0f;
             var value_EyeIrisHide = 0f;
+            var value_Highlight_Hide = 0f;
             var value_MouthClose = 0f;
             var value_MouthUp = 0f;
             var value_MouthDown = 0f;
@@ -68,6 +69,7 @@ namespace Amoherom
             var value_MouthNeutral = 0f;
             var value_MouthFun = 0f;
             var value_MouthJoy = 0f;
+            var value_MouthAngry = 0f;
             var value_MouthSorrow = 0f;
             var value_MouthSurprised = 0f;
             var value_MouthSkinFung = 0f;
@@ -221,6 +223,10 @@ namespace Amoherom
                                 value_EyeIrisHide += clipWeight * blendEntry.value;
                                 isFacial = true;
                                 break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.EyeHighlightHide:
+                                value_Highlight_Hide += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
                             case VrmBlendShapeBehaviour.ExpressionPreset.MouthClose:
                                 value_MouthClose += clipWeight * blendEntry.value;
                                 isFacial = true;
@@ -251,6 +257,10 @@ namespace Amoherom
                                 break;
                             case VrmBlendShapeBehaviour.ExpressionPreset.MouthJoy:
                                 value_MouthJoy += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.MouthAngry:
+                                value_MouthAngry += clipWeight * blendEntry.value;
                                 isFacial = true;
                                 break;
                             case VrmBlendShapeBehaviour.ExpressionPreset.MouthSorrow:
@@ -431,6 +441,7 @@ namespace Amoherom
                         int indexEyeSurprised = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_EYE_Suprized");
                         int indexEyeSpread = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_EYE_Spread");
                         int indexEyeIrisHide = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_EYE_Iris_Hide");
+                        int indexEyeHighlightHide = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_EYE_Highlight_Hide");
                         int indexMouthClose = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Close");
                         int indexMouthUp = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Up");
                         int indexMouthDown = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Down");
@@ -439,6 +450,7 @@ namespace Amoherom
                         int indexMouthNeutral = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Neutral");
                         int indexMouthFun = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Fun");
                         int indexMouthJoy = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Joy");
+                        int indexMouthAngry = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Angry");
                         int indexMouthSorrow = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Sorrow");
                         int indexMouthSurprised = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Suprized");
                         int indexMouthSkinFung = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_SkinFung");
@@ -474,6 +486,7 @@ namespace Amoherom
                         if (indexEyeSurprised >= 0) meshRender.SetBlendShapeWeight(indexEyeSurprised, value_EyeSurprised * 100f);
                         if (indexEyeSpread >= 0) meshRender.SetBlendShapeWeight(indexEyeSpread, value_EyeSpread * 100f);
                         if (indexEyeIrisHide >= 0) meshRender.SetBlendShapeWeight(indexEyeIrisHide, value_EyeIrisHide * 100f);
+                        if (indexEyeHighlightHide >= 0) meshRender.SetBlendShapeWeight(indexEyeHighlightHide, value_Highlight_Hide * 100f);
                         if (indexMouthClose >= 0) meshRender.SetBlendShapeWeight(indexMouthClose, value_MouthClose * 100f);
                         if (indexMouthUp >= 0) meshRender.SetBlendShapeWeight(indexMouthUp, value_MouthUp * 100f);
                         if (indexMouthDown >= 0) meshRender.SetBlendShapeWeight(indexMouthDown, value_MouthDown * 100f);
@@ -482,6 +495,7 @@ namespace Amoherom
                         if (indexMouthNeutral >= 0) meshRender.SetBlendShapeWeight(indexMouthNeutral, value_MouthNeutral * 100f);
                         if (indexMouthFun >= 0) meshRender.SetBlendShapeWeight(indexMouthFun, value_MouthFun * 100f);
                         if (indexMouthJoy >= 0) meshRender.SetBlendShapeWeight(indexMouthJoy, value_MouthJoy * 100f);
+                    if (indexMouthAngry >= 0) meshRender.SetBlendShapeWeight(indexMouthAngry, value_MouthAngry * 100f);
                         if (indexMouthSorrow >= 0) meshRender.SetBlendShapeWeight(indexMouthSorrow, value_MouthSorrow * 100f);
                         if (indexMouthSurprised >= 0) meshRender.SetBlendShapeWeight(indexMouthSurprised, value_MouthSurprised * 100f);
                         if (indexMouthSkinFung >= 0) meshRender.SetBlendShapeWeight(indexMouthSkinFung, value_MouthSkinFung * 100f);
@@ -542,6 +556,7 @@ namespace Amoherom
                         int indexEyeSurprised = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_EYE_Suprized");
                         int indexEyeSpread = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_EYE_Spread");
                         int indexEyeIrisHide = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_EYE_Iris_Hide");
+                        int indexEyeHighlightHide = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_EYE_Highlight_Hide");
                         int indexMouthClose = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Close");
                         int indexMouthUp = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Up");
                         int indexMouthDown = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Down");
@@ -550,6 +565,7 @@ namespace Amoherom
                         int indexMouthNeutral = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Neutral");
                         int indexMouthFun = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Fun");
                         int indexMouthJoy = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Joy");
+                        int indexMouthAngry = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Angry");
                         int indexMouthSorrow = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Sorrow");
                         int indexMouthSurprised = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Suprized");
                         int indexMouthSkinFung = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_SkinFung");
@@ -590,6 +606,7 @@ namespace Amoherom
                         if (indexEyeSurprised >= 0) meshRender.SetBlendShapeWeight(indexEyeSurprised, value_EyeSurprised * 100f);
                         if (indexEyeSpread >= 0) meshRender.SetBlendShapeWeight(indexEyeSpread, value_EyeSpread * 100f);
                         if (indexEyeIrisHide >= 0) meshRender.SetBlendShapeWeight(indexEyeIrisHide, value_EyeIrisHide * 100f);
+                        if (indexEyeHighlightHide >= 0) meshRender.SetBlendShapeWeight(indexEyeHighlightHide, value_Highlight_Hide * 100f);
                         if (indexMouthClose >= 0) meshRender.SetBlendShapeWeight(indexMouthClose, value_MouthClose * 100f);
                         if (indexMouthUp >= 0) meshRender.SetBlendShapeWeight(indexMouthUp, value_MouthUp * 100f);
                         if (indexMouthDown >= 0) meshRender.SetBlendShapeWeight(indexMouthDown, value_MouthDown * 100f);
@@ -598,6 +615,7 @@ namespace Amoherom
                         if (indexMouthNeutral >= 0) meshRender.SetBlendShapeWeight(indexMouthNeutral, value_MouthNeutral * 100f);
                         if (indexMouthFun >= 0) meshRender.SetBlendShapeWeight(indexMouthFun, value_MouthFun * 100f);
                         if (indexMouthJoy >= 0) meshRender.SetBlendShapeWeight(indexMouthJoy, value_MouthJoy * 100f);
+                    if (indexMouthAngry >= 0) meshRender.SetBlendShapeWeight(indexMouthAngry, value_MouthAngry * 100f);
                         if (indexMouthSorrow >= 0) meshRender.SetBlendShapeWeight(indexMouthSorrow, value_MouthSorrow * 100f);
                         if (indexMouthSurprised >= 0) meshRender.SetBlendShapeWeight(indexMouthSurprised, value_MouthSurprised * 100f);
                         if (indexMouthSkinFung >= 0) meshRender.SetBlendShapeWeight(indexMouthSkinFung, value_MouthSkinFung * 100f);
@@ -673,6 +691,7 @@ namespace Amoherom
                     int indexEyeSurprised = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_EYE_Suprized");
                     int indexEyeSpread = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_EYE_Spread");
                     int indexEyeIrisHide = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_EYE_Iris_Hide");
+                    int indexEyeHighlightHide = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_EYE_Highlight_Hide");
                     int indexMouthClose = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Close");
                     int indexMouthUp = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Up");
                     int indexMouthDown = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Down");
@@ -681,6 +700,7 @@ namespace Amoherom
                     int indexMouthNeutral = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Neutral");
                     int indexMouthFun = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Fun");
                     int indexMouthJoy = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Joy");
+                        int indexMouthAngry = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Angry");
                     int indexMouthSorrow = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Sorrow");
                     int indexMouthSurprised = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Suprized");
                     int indexMouthSkinFung = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_SkinFung");
@@ -716,6 +736,7 @@ namespace Amoherom
                     if (indexEyeSurprised >= 0) meshRender.SetBlendShapeWeight(indexEyeSurprised, value_EyeSurprised * 100f);
                     if (indexEyeSpread >= 0) meshRender.SetBlendShapeWeight(indexEyeSpread, value_EyeSpread * 100f);
                     if (indexEyeIrisHide >= 0) meshRender.SetBlendShapeWeight(indexEyeIrisHide, value_EyeIrisHide * 100f);
+                    if (indexEyeHighlightHide >= 0) meshRender.SetBlendShapeWeight(indexEyeHighlightHide, value_Highlight_Hide * 100f);
                     if (indexMouthClose >= 0) meshRender.SetBlendShapeWeight(indexMouthClose, value_MouthClose * 100f);
                     if (indexMouthUp >= 0) meshRender.SetBlendShapeWeight(indexMouthUp, value_MouthUp * 100f);
                     if (indexMouthDown >= 0) meshRender.SetBlendShapeWeight(indexMouthDown, value_MouthDown * 100f);
@@ -724,6 +745,7 @@ namespace Amoherom
                     if (indexMouthNeutral >= 0) meshRender.SetBlendShapeWeight(indexMouthNeutral, value_MouthNeutral * 100f);
                     if (indexMouthFun >= 0) meshRender.SetBlendShapeWeight(indexMouthFun, value_MouthFun * 100f);
                     if (indexMouthJoy >= 0) meshRender.SetBlendShapeWeight(indexMouthJoy, value_MouthJoy * 100f);
+                    if (indexMouthAngry >= 0) meshRender.SetBlendShapeWeight(indexMouthAngry, value_MouthAngry * 100f);
                     if (indexMouthSorrow >= 0) meshRender.SetBlendShapeWeight(indexMouthSorrow, value_MouthSorrow * 100f);
                     if (indexMouthSurprised >= 0) meshRender.SetBlendShapeWeight(indexMouthSurprised, value_MouthSurprised * 100f);
                     if (indexMouthSkinFung >= 0) meshRender.SetBlendShapeWeight(indexMouthSkinFung, value_MouthSkinFung * 100f);
@@ -784,6 +806,7 @@ namespace Amoherom
                     int indexEyeSurprised = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_EYE_Suprized");
                     int indexEyeSpread = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_EYE_Spread");
                     int indexEyeIrisHide = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_EYE_Iris_Hide");
+                    int indexEyeHighlightHide = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_EYE_Highlight_Hide");
                     int indexMouthClose = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Close");
                     int indexMouthUp = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Up");
                     int indexMouthDown = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Down");
@@ -792,6 +815,7 @@ namespace Amoherom
                     int indexMouthNeutral = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Neutral");
                     int indexMouthFun = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Fun");
                     int indexMouthJoy = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Joy");
+                        int indexMouthAngry = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Angry");
                     int indexMouthSorrow = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Sorrow");
                     int indexMouthSurprised = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_Suprized");
                     int indexMouthSkinFung = meshRender.sharedMesh.GetBlendShapeIndex("Fcl_MTH_SkinFung");
@@ -832,6 +856,7 @@ namespace Amoherom
                     if (indexEyeSurprised >= 0) meshRender.SetBlendShapeWeight(indexEyeSurprised, value_EyeSurprised * 100f);
                     if (indexEyeSpread >= 0) meshRender.SetBlendShapeWeight(indexEyeSpread, value_EyeSpread * 100f);
                     if (indexEyeIrisHide >= 0) meshRender.SetBlendShapeWeight(indexEyeIrisHide, value_EyeIrisHide * 100f);
+                    if (indexEyeHighlightHide >= 0) meshRender.SetBlendShapeWeight(indexEyeHighlightHide, value_Highlight_Hide * 100f);
                     if (indexMouthClose >= 0) meshRender.SetBlendShapeWeight(indexMouthClose, value_MouthClose * 100f);
                     if (indexMouthUp >= 0) meshRender.SetBlendShapeWeight(indexMouthUp, value_MouthUp * 100f);
                     if (indexMouthDown >= 0) meshRender.SetBlendShapeWeight(indexMouthDown, value_MouthDown * 100f);
@@ -840,6 +865,7 @@ namespace Amoherom
                     if (indexMouthNeutral >= 0) meshRender.SetBlendShapeWeight(indexMouthNeutral, value_MouthNeutral * 100f);
                     if (indexMouthFun >= 0) meshRender.SetBlendShapeWeight(indexMouthFun, value_MouthFun * 100f);
                     if (indexMouthJoy >= 0) meshRender.SetBlendShapeWeight(indexMouthJoy, value_MouthJoy * 100f);
+                    if (indexMouthAngry >= 0) meshRender.SetBlendShapeWeight(indexMouthAngry, value_MouthAngry * 100f);
                     if (indexMouthSorrow >= 0) meshRender.SetBlendShapeWeight(indexMouthSorrow, value_MouthSorrow * 100f);
                     if (indexMouthSurprised >= 0) meshRender.SetBlendShapeWeight(indexMouthSurprised, value_MouthSurprised * 100f);
                     if (indexMouthSkinFung >= 0) meshRender.SetBlendShapeWeight(indexMouthSkinFung, value_MouthSkinFung * 100f);
