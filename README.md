@@ -8,7 +8,7 @@ I’ll keep adding new tools as I develop them, so this will grow over time.
 
 ## 🚀 Features
 
-- Latest: Thumbnail Camera
+- Latest: VRMBlendshape Clip & Track
 - Planned: Collison Ragdoll Generator and editor (mostly for cloth physics) 
 
 ---
