@@ -82,7 +82,7 @@ namespace Amoherom
         public struct BlendShapeEntry
         {
             public ExpressionPreset preset;
-            [Range(0f, 1f)]
+            [Range(-1f, 1f)]
             public float value;
         }
 

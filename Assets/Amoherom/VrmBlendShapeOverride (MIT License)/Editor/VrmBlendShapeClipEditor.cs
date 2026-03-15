@@ -52,7 +52,7 @@ namespace Amoherom
                     var sliderRect = new Rect(rect.x, rect.y + EditorGUIUtility.singleLineHeight + 6, rect.width, EditorGUIUtility.singleLineHeight);
 
                     EditorGUI.PropertyField(presetRect, presetProp, GUIContent.none);
-                    valueProp.floatValue = EditorGUI.Slider(sliderRect, valueProp.floatValue, 0f, 1f);
+                    valueProp.floatValue = EditorGUI.Slider(sliderRect, valueProp.floatValue, -1f, 1f);
                 }
             };
         }
