@@ -47,6 +47,7 @@ namespace Amoherom
             EyeSurprised,
             EyeSpread,
             EyeIrisHide,
+            EyeHighlightHide,
 
             MouthClose,
             MouthUp,
@@ -56,6 +57,7 @@ namespace Amoherom
             MouthNeutral,
             MouthFun,
             MouthJoy,
+            MouthAngry,
             MouthSorrow,
             MouthSurprised,
             MouthSkinFung,
