@@ -21,13 +21,13 @@ I’ll keep adding new tools as I develop them, so this will grow over time.
 
 or,
    
-1. Once the Release is uploaded, Download the latest Release,
+1. Download the latest Release,
 2. Import it as Custom Package
 3. Start Using it on your project
 
 *Important : [UniVRM](https://github.com/vrm-c/UniVRM) Required!. 
 
-*Unity Version im Using: 2022.3.62f2 (Others sometimes gave me a MToons shader issue so im using this)
+*Unity Version im Using: 2022.3.62f3 (Others sometimes gave me a MToons shader issue so im using this)
 
 ---
 
