@@ -17,12 +17,19 @@ public class CaptureConfiguration
     public ThumbnailToolWindow.ImageFormat format = ThumbnailToolWindow.ImageFormat.PNG;
     public int jpgQuality = 90;
     public bool useCustomSize = false;
+    
+}
+
+[System.Serializable]
+public class ConfigurationList
+{
+    public List<CaptureConfiguration> items = new List<CaptureConfiguration>();
 }
 
 public class ThumbnailToolWindow : EditorWindow
 {
     string THUMBNAIL_FOLDER_NAME = "Thumbnails";
-    
+    private const string PREFS_KEY = "ThumbnailToolConfigurations";
     // Configuration management
     private List<CaptureConfiguration> configurations = new List<CaptureConfiguration>();
     private int selectedConfigIndex = -1;
@@ -414,5 +421,23 @@ public class ThumbnailToolWindow : EditorWindow
         Camera camera = cam.AddComponent<Camera>();
         camera.transform.position = new Vector3(0, 1.4f, -2);
         camera.transform.LookAt(Vector3.zero);
+    }
+
+
+    private void OnEnable()
+    {
+        if (EditorPrefs.HasKey(PREFS_KEY))
+        {
+            string json = EditorPrefs.GetString(PREFS_KEY);
+            var wrapper = JsonUtility.FromJson<ConfigurationList>(json);
+            if (wrapper != null)
+                configurations = wrapper.items;
+        }
+    }
+
+    private void OnDisable()
+    {
+        var wrapper = new ConfigurationList { items = configurations };
+        EditorPrefs.SetString(PREFS_KEY, JsonUtility.ToJson(wrapper));
     }
 }
