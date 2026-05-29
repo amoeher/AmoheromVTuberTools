@@ -89,6 +89,60 @@ namespace Amoherom
             var value_HAShortUp = 0f;
             var value_HAShortLow = 0f;
 
+            // ARKit blendshapes
+            var value_browInnerUp = 0f;
+            var value_browDownLeft = 0f;
+            var value_browDownRight = 0f;
+            var value_browOuterUpLeft = 0f;
+            var value_browOuterUpRight = 0f;
+            var value_eyeLookUpLeft = 0f;
+            var value_eyeLookUpRight = 0f;
+            var value_eyeLookDownLeft = 0f;
+            var value_eyeLookDownRight = 0f;
+            var value_eyeLookInLeft = 0f;
+            var value_eyeLookInRight = 0f;
+            var value_eyeLookOutLeft = 0f;
+            var value_eyeLookOutRight = 0f;
+            var value_eyeBlinkLeft = 0f;
+            var value_eyeBlinkRight = 0f;
+            var value_eyeSquintLeft = 0f;
+            var value_eyeSquintRight = 0f;
+            var value_eyeWideLeft = 0f;
+            var value_eyeWideRight = 0f;
+            var value_cheekPuff = 0f;
+            var value_cheekSquintLeft = 0f;
+            var value_cheekSquintRight = 0f;
+            var value_noseSneerLeft = 0f;
+            var value_noseSneerRight = 0f;
+            var value_jawOpen = 0f;
+            var value_jawForward = 0f;
+            var value_jawLeft = 0f;
+            var value_jawRight = 0f;
+            var value_mouthFunnel = 0f;
+            var value_mouthPucker = 0f;
+            var value_mouthLeft = 0f;
+            var value_mouthRight = 0f;
+            var value_mouthRollUpper = 0f;
+            var value_mouthRollLower = 0f;
+            var value_mouthShrugUpper = 0f;
+            var value_mouthShrugLower = 0f;
+            var value_mouthClose_ARKit = 0f;
+            var value_mouthSmileLeft = 0f;
+            var value_mouthSmileRight = 0f;
+            var value_mouthFrownLeft = 0f;
+            var value_mouthFrownRight = 0f;
+            var value_mouthDimpleLeft = 0f;
+            var value_mouthDimpleRight = 0f;
+            var value_mouthUpperUpLeft = 0f;
+            var value_mouthUpperUpRight = 0f;
+            var value_mouthLowerDownLeft = 0f;
+            var value_mouthLowerDownRight = 0f;
+            var value_mouthPressLeft = 0f;
+            var value_mouthPressRight = 0f;
+            var value_mouthStretchLeft = 0f;
+            var value_mouthStretchRight = 0f;
+            var value_tongueOut = 0f;
+
             var isLipSync = false;
             var isFacial = false;
 
@@ -333,6 +387,216 @@ namespace Amoherom
                                 break;
                             case VrmBlendShapeBehaviour.ExpressionPreset.HAShortLow:
                                 value_HAShortLow += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+
+                            // ARKit blendshapes
+                            case VrmBlendShapeBehaviour.ExpressionPreset.browInnerUp:
+                                value_browInnerUp += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.browDownLeft:
+                                value_browDownLeft += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.browDownRight:
+                                value_browDownRight += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.browOuterUpLeft:
+                                value_browOuterUpLeft += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.browOuterUpRight:
+                                value_browOuterUpRight += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.eyeLookUpLeft:
+                                value_eyeLookUpLeft += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.eyeLookUpRight:
+                                value_eyeLookUpRight += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.eyeLookDownLeft:
+                                value_eyeLookDownLeft += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.eyeLookDownRight:
+                                value_eyeLookDownRight += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.eyeLookInLeft:
+                                value_eyeLookInLeft += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.eyeLookInRight:
+                                value_eyeLookInRight += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.eyeLookOutLeft:
+                                value_eyeLookOutLeft += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.eyeLookOutRight:
+                                value_eyeLookOutRight += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.eyeBlinkLeft:
+                                value_eyeBlinkLeft += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.eyeBlinkRight:
+                                value_eyeBlinkRight += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.eyeSquintLeft:
+                                value_eyeSquintLeft += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.eyeSquintRight:
+                                value_eyeSquintRight += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.eyeWideLeft:
+                                value_eyeWideLeft += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.eyeWideRight:
+                                value_eyeWideRight += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.cheekPuff:
+                                value_cheekPuff += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.cheekSquintLeft:
+                                value_cheekSquintLeft += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.cheekSquintRight:
+                                value_cheekSquintRight += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.noseSneerLeft:
+                                value_noseSneerLeft += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.noseSneerRight:
+                                value_noseSneerRight += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.jawOpen:
+                                value_jawOpen += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.jawForward:
+                                value_jawForward += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.jawLeft:
+                                value_jawLeft += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.jawRight:
+                                value_jawRight += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthFunnel:
+                                value_mouthFunnel += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthPucker:
+                                value_mouthPucker += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthLeft:
+                                value_mouthLeft += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthRight:
+                                value_mouthRight += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthRollUpper:
+                                value_mouthRollUpper += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthRollLower:
+                                value_mouthRollLower += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthShrugUpper:
+                                value_mouthShrugUpper += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthShrugLower:
+                                value_mouthShrugLower += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthClose:
+                                value_mouthClose_ARKit += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthSmileLeft:
+                                value_mouthSmileLeft += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthSmileRight:
+                                value_mouthSmileRight += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthFrownLeft:
+                                value_mouthFrownLeft += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthFrownRight:
+                                value_mouthFrownRight += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthDimpleLeft:
+                                value_mouthDimpleLeft += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthDimpleRight:
+                                value_mouthDimpleRight += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthUpperUpLeft:
+                                value_mouthUpperUpLeft += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthUpperUpRight:
+                                value_mouthUpperUpRight += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthLowerDownLeft:
+                                value_mouthLowerDownLeft += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthLowerDownRight:
+                                value_mouthLowerDownRight += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthPressLeft:
+                                value_mouthPressLeft += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthPressRight:
+                                value_mouthPressRight += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthStretchLeft:
+                                value_mouthStretchLeft += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.mouthStretchRight:
+                                value_mouthStretchRight += clipWeight * blendEntry.value;
+                                isFacial = true;
+                                break;
+                            case VrmBlendShapeBehaviour.ExpressionPreset.tongueOut:
+                                value_tongueOut += clipWeight * blendEntry.value;
                                 isFacial = true;
                                 break;
                         }
@@ -884,6 +1148,113 @@ namespace Amoherom
                     if (indexHAShort >= 0) meshRender.SetBlendShapeWeight(indexHAShort, value_HAShort * 100f);
                     if (indexHAShortUp >= 0) meshRender.SetBlendShapeWeight(indexHAShortUp, value_HAShortUp * 100f);
                     if (indexHAShortLow >= 0) meshRender.SetBlendShapeWeight(indexHAShortLow, value_HAShortLow * 100f);
+
+                    // ARKit blendshapes
+                    int index_browInnerUp = meshRender.sharedMesh.GetBlendShapeIndex("browInnerUp");
+                    int index_browDownLeft = meshRender.sharedMesh.GetBlendShapeIndex("browDown_L");
+                    int index_browDownRight = meshRender.sharedMesh.GetBlendShapeIndex("browDown_R");
+                    int index_browOuterUpLeft = meshRender.sharedMesh.GetBlendShapeIndex("browOuterUp_L");
+                    int index_browOuterUpRight = meshRender.sharedMesh.GetBlendShapeIndex("browOuterUp_R");
+                    int index_eyeLookUpLeft = meshRender.sharedMesh.GetBlendShapeIndex("eyeLookUp_L");
+                    int index_eyeLookUpRight = meshRender.sharedMesh.GetBlendShapeIndex("eyeLookUp_R");
+                    int index_eyeLookDownLeft = meshRender.sharedMesh.GetBlendShapeIndex("eyeLookDown_L");
+                    int index_eyeLookDownRight = meshRender.sharedMesh.GetBlendShapeIndex("eyeLookDown_R");
+                    int index_eyeLookInLeft = meshRender.sharedMesh.GetBlendShapeIndex("eyeLookIn_L");
+                    int index_eyeLookInRight = meshRender.sharedMesh.GetBlendShapeIndex("eyeLookIn_R");
+                    int index_eyeLookOutLeft = meshRender.sharedMesh.GetBlendShapeIndex("eyeLookOut_L");
+                    int index_eyeLookOutRight = meshRender.sharedMesh.GetBlendShapeIndex("eyeLookOut_R");
+                    int index_eyeBlinkLeft = meshRender.sharedMesh.GetBlendShapeIndex("eyeBlink_L");
+                    int index_eyeBlinkRight = meshRender.sharedMesh.GetBlendShapeIndex("eyeBlink_R");
+                    int index_eyeSquintLeft = meshRender.sharedMesh.GetBlendShapeIndex("eyeSquint_L");
+                    int index_eyeSquintRight = meshRender.sharedMesh.GetBlendShapeIndex("eyeSquint_R");
+                    int index_eyeWideLeft = meshRender.sharedMesh.GetBlendShapeIndex("eyeWide_L");
+                    int index_eyeWideRight = meshRender.sharedMesh.GetBlendShapeIndex("eyeWide_R");
+                    int index_cheekPuff = meshRender.sharedMesh.GetBlendShapeIndex("cheekPuff");
+                    int index_cheekSquintLeft = meshRender.sharedMesh.GetBlendShapeIndex("cheekSquint_L");
+                    int index_cheekSquintRight = meshRender.sharedMesh.GetBlendShapeIndex("cheekSquint_R");
+                    int index_noseSneerLeft = meshRender.sharedMesh.GetBlendShapeIndex("noseSneer_L");
+                    int index_noseSneerRight = meshRender.sharedMesh.GetBlendShapeIndex("noseSneer_R");
+                    int index_jawOpen = meshRender.sharedMesh.GetBlendShapeIndex("jawOpen");
+                    int index_jawForward = meshRender.sharedMesh.GetBlendShapeIndex("jawForward");
+                    int index_jawLeft = meshRender.sharedMesh.GetBlendShapeIndex("jawLeft");
+                    int index_jawRight = meshRender.sharedMesh.GetBlendShapeIndex("jawRight");
+                    int index_mouthFunnel = meshRender.sharedMesh.GetBlendShapeIndex("mouthFunnel");
+                    int index_mouthPucker = meshRender.sharedMesh.GetBlendShapeIndex("mouthPucker");
+                    int index_mouthLeft = meshRender.sharedMesh.GetBlendShapeIndex("mouthLeft");
+                    int index_mouthRight = meshRender.sharedMesh.GetBlendShapeIndex("mouthRight");
+                    int index_mouthRollUpper = meshRender.sharedMesh.GetBlendShapeIndex("mouthRollUpper");
+                    int index_mouthRollLower = meshRender.sharedMesh.GetBlendShapeIndex("mouthRollLower");
+                    int index_mouthShrugUpper = meshRender.sharedMesh.GetBlendShapeIndex("mouthShrugUpper");
+                    int index_mouthShrugLower = meshRender.sharedMesh.GetBlendShapeIndex("mouthShrugLower");
+                    int index_mouthClose_ARKit = meshRender.sharedMesh.GetBlendShapeIndex("mouthClose");
+                    int index_mouthSmileLeft = meshRender.sharedMesh.GetBlendShapeIndex("mouthSmile_L");
+                    int index_mouthSmileRight = meshRender.sharedMesh.GetBlendShapeIndex("mouthSmile_R");
+                    int index_mouthFrownLeft = meshRender.sharedMesh.GetBlendShapeIndex("mouthFrown_L");
+                    int index_mouthFrownRight = meshRender.sharedMesh.GetBlendShapeIndex("mouthFrown_R");
+                    int index_mouthDimpleLeft = meshRender.sharedMesh.GetBlendShapeIndex("mouthDimple_L");
+                    int index_mouthDimpleRight = meshRender.sharedMesh.GetBlendShapeIndex("mouthDimple_R");
+                    int index_mouthUpperUpLeft = meshRender.sharedMesh.GetBlendShapeIndex("mouthUpperUp_L");
+                    int index_mouthUpperUpRight = meshRender.sharedMesh.GetBlendShapeIndex("mouthUpperUp_R");
+                    int index_mouthLowerDownLeft = meshRender.sharedMesh.GetBlendShapeIndex("mouthLowerDown_L");
+                    int index_mouthLowerDownRight = meshRender.sharedMesh.GetBlendShapeIndex("mouthLowerDown_R");
+                    int index_mouthPressLeft = meshRender.sharedMesh.GetBlendShapeIndex("mouthPress_L");
+                    int index_mouthPressRight = meshRender.sharedMesh.GetBlendShapeIndex("mouthPress_R");
+                    int index_mouthStretchLeft = meshRender.sharedMesh.GetBlendShapeIndex("mouthStretch_L");
+                    int index_mouthStretchRight = meshRender.sharedMesh.GetBlendShapeIndex("mouthStretch_R");
+                    int index_tongueOut = meshRender.sharedMesh.GetBlendShapeIndex("tongueOut");
+
+                    if (index_browInnerUp >= 0) meshRender.SetBlendShapeWeight(index_browInnerUp, value_browInnerUp * 100f);
+                    if (index_browDownLeft >= 0) meshRender.SetBlendShapeWeight(index_browDownLeft, value_browDownLeft * 100f);
+                    if (index_browDownRight >= 0) meshRender.SetBlendShapeWeight(index_browDownRight, value_browDownRight * 100f);
+                    if (index_browOuterUpLeft >= 0) meshRender.SetBlendShapeWeight(index_browOuterUpLeft, value_browOuterUpLeft * 100f);
+                    if (index_browOuterUpRight >= 0) meshRender.SetBlendShapeWeight(index_browOuterUpRight, value_browOuterUpRight * 100f);
+                    if (index_eyeLookUpLeft >= 0) meshRender.SetBlendShapeWeight(index_eyeLookUpLeft, value_eyeLookUpLeft * 100f);
+                    if (index_eyeLookUpRight >= 0) meshRender.SetBlendShapeWeight(index_eyeLookUpRight, value_eyeLookUpRight * 100f);
+                    if (index_eyeLookDownLeft >= 0) meshRender.SetBlendShapeWeight(index_eyeLookDownLeft, value_eyeLookDownLeft * 100f);
+                    if (index_eyeLookDownRight >= 0) meshRender.SetBlendShapeWeight(index_eyeLookDownRight, value_eyeLookDownRight * 100f);
+                    if (index_eyeLookInLeft >= 0) meshRender.SetBlendShapeWeight(index_eyeLookInLeft, value_eyeLookInLeft * 100f);
+                    if (index_eyeLookInRight >= 0) meshRender.SetBlendShapeWeight(index_eyeLookInRight, value_eyeLookInRight * 100f);
+                    if (index_eyeLookOutLeft >= 0) meshRender.SetBlendShapeWeight(index_eyeLookOutLeft, value_eyeLookOutLeft * 100f);
+                    if (index_eyeLookOutRight >= 0) meshRender.SetBlendShapeWeight(index_eyeLookOutRight, value_eyeLookOutRight * 100f);
+                    if (index_eyeBlinkLeft >= 0) meshRender.SetBlendShapeWeight(index_eyeBlinkLeft, value_eyeBlinkLeft * 100f);
+                    if (index_eyeBlinkRight >= 0) meshRender.SetBlendShapeWeight(index_eyeBlinkRight, value_eyeBlinkRight * 100f);
+                    if (index_eyeSquintLeft >= 0) meshRender.SetBlendShapeWeight(index_eyeSquintLeft, value_eyeSquintLeft * 100f);
+                    if (index_eyeSquintRight >= 0) meshRender.SetBlendShapeWeight(index_eyeSquintRight, value_eyeSquintRight * 100f);
+                    if (index_eyeWideLeft >= 0) meshRender.SetBlendShapeWeight(index_eyeWideLeft, value_eyeWideLeft * 100f);
+                    if (index_eyeWideRight >= 0) meshRender.SetBlendShapeWeight(index_eyeWideRight, value_eyeWideRight * 100f);
+                    if (index_cheekPuff >= 0) meshRender.SetBlendShapeWeight(index_cheekPuff, value_cheekPuff * 100f);
+                    if (index_cheekSquintLeft >= 0) meshRender.SetBlendShapeWeight(index_cheekSquintLeft, value_cheekSquintLeft * 100f);
+                    if (index_cheekSquintRight >= 0) meshRender.SetBlendShapeWeight(index_cheekSquintRight, value_cheekSquintRight * 100f);
+                    if (index_noseSneerLeft >= 0) meshRender.SetBlendShapeWeight(index_noseSneerLeft, value_noseSneerLeft * 100f);
+                    if (index_noseSneerRight >= 0) meshRender.SetBlendShapeWeight(index_noseSneerRight, value_noseSneerRight * 100f);
+                    if (index_jawOpen >= 0) meshRender.SetBlendShapeWeight(index_jawOpen, value_jawOpen * 100f);
+                    if (index_jawForward >= 0) meshRender.SetBlendShapeWeight(index_jawForward, value_jawForward * 100f);
+                    if (index_jawLeft >= 0) meshRender.SetBlendShapeWeight(index_jawLeft, value_jawLeft * 100f);
+                    if (index_jawRight >= 0) meshRender.SetBlendShapeWeight(index_jawRight, value_jawRight * 100f);
+                    if (index_mouthFunnel >= 0) meshRender.SetBlendShapeWeight(index_mouthFunnel, value_mouthFunnel * 100f);
+                    if (index_mouthPucker >= 0) meshRender.SetBlendShapeWeight(index_mouthPucker, value_mouthPucker * 100f);
+                    if (index_mouthLeft >= 0) meshRender.SetBlendShapeWeight(index_mouthLeft, value_mouthLeft * 100f);
+                    if (index_mouthRight >= 0) meshRender.SetBlendShapeWeight(index_mouthRight, value_mouthRight * 100f);
+                    if (index_mouthRollUpper >= 0) meshRender.SetBlendShapeWeight(index_mouthRollUpper, value_mouthRollUpper * 100f);
+                    if (index_mouthRollLower >= 0) meshRender.SetBlendShapeWeight(index_mouthRollLower, value_mouthRollLower * 100f);
+                    if (index_mouthShrugUpper >= 0) meshRender.SetBlendShapeWeight(index_mouthShrugUpper, value_mouthShrugUpper * 100f);
+                    if (index_mouthShrugLower >= 0) meshRender.SetBlendShapeWeight(index_mouthShrugLower, value_mouthShrugLower * 100f);
+                    if (index_mouthClose_ARKit >= 0) meshRender.SetBlendShapeWeight(index_mouthClose_ARKit, value_mouthClose_ARKit * 100f);
+                    if (index_mouthSmileLeft >= 0) meshRender.SetBlendShapeWeight(index_mouthSmileLeft, value_mouthSmileLeft * 100f);
+                    if (index_mouthSmileRight >= 0) meshRender.SetBlendShapeWeight(index_mouthSmileRight, value_mouthSmileRight * 100f);
+                    if (index_mouthFrownLeft >= 0) meshRender.SetBlendShapeWeight(index_mouthFrownLeft, value_mouthFrownLeft * 100f);
+                    if (index_mouthFrownRight >= 0) meshRender.SetBlendShapeWeight(index_mouthFrownRight, value_mouthFrownRight * 100f);
+                    if (index_mouthDimpleLeft >= 0) meshRender.SetBlendShapeWeight(index_mouthDimpleLeft, value_mouthDimpleLeft * 100f);
+                    if (index_mouthDimpleRight >= 0) meshRender.SetBlendShapeWeight(index_mouthDimpleRight, value_mouthDimpleRight * 100f);
+                    if (index_mouthUpperUpLeft >= 0) meshRender.SetBlendShapeWeight(index_mouthUpperUpLeft, value_mouthUpperUpLeft * 100f);
+                    if (index_mouthUpperUpRight >= 0) meshRender.SetBlendShapeWeight(index_mouthUpperUpRight, value_mouthUpperUpRight * 100f);
+                    if (index_mouthLowerDownLeft >= 0) meshRender.SetBlendShapeWeight(index_mouthLowerDownLeft, value_mouthLowerDownLeft * 100f);
+                    if (index_mouthLowerDownRight >= 0) meshRender.SetBlendShapeWeight(index_mouthLowerDownRight, value_mouthLowerDownRight * 100f);
+                    if (index_mouthPressLeft >= 0) meshRender.SetBlendShapeWeight(index_mouthPressLeft, value_mouthPressLeft * 100f);
+                    if (index_mouthPressRight >= 0) meshRender.SetBlendShapeWeight(index_mouthPressRight, value_mouthPressRight * 100f);
+                    if (index_mouthStretchLeft >= 0) meshRender.SetBlendShapeWeight(index_mouthStretchLeft, value_mouthStretchLeft * 100f);
+                    if (index_mouthStretchRight >= 0) meshRender.SetBlendShapeWeight(index_mouthStretchRight, value_mouthStretchRight * 100f);
+                    if (index_tongueOut >= 0) meshRender.SetBlendShapeWeight(index_tongueOut, value_tongueOut * 100f);
                 }
             }
         }
