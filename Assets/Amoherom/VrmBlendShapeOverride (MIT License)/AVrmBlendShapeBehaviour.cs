@@ -115,7 +115,7 @@ namespace Amoherom
             mouthRollLower,
             mouthShrugUpper,
             mouthShrugLower,
-            mouthClose,
+            mouthClose_arkit,
             mouthSmileLeft,
             mouthSmileRight,
             mouthFrownLeft,
