@@ -9,7 +9,7 @@ I’ll keep adding new tools as I develop them, so this will grow over time.
 ## 🚀 Features
 
 - Latest: VRMBlendshape Clip & Track
-- Planned: Collison Ragdoll Generator and editor (mostly for cloth physics) 
+- Planned: Collider Copy to original model to similar (mostly for cloth physics) 
 
 ---
 
