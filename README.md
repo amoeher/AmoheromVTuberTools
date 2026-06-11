@@ -8,7 +8,7 @@ I’ll keep adding new tools as I develop them, so this will grow over time.
 
 ## 🚀 Features
 
-- Latest: VRMBlendshape Clip & Track
+- Latest: ARKit Support (including VRM10 blendshapes T~117) 
 - Planned: Collider Copy to original model to similar (mostly for cloth physics) 
 
 ---
